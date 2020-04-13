@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InitialScrollVC: UIViewController {
+    
+    @IBOutlet weak var photoSearch: UISearchBar!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
 
