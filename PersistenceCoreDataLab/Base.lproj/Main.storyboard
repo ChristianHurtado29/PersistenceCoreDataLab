@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="718.84057971014499" y="1189.9553571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Initial ScrollVC-->
         <scene sceneID="1GX-el-VpV">
             <objects>
-                <viewController id="OAJ-YW-Bws" sceneMemberID="viewController">
+                <viewController id="OAJ-YW-Bws" customClass="InitialScrollVC" customModule="PersistenceCoreDataLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5l-4C-LR0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,20 +141,64 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ugt-hM-52O">
-                                    <size key="itemSize" width="414" height="294"/>
+                                    <size key="itemSize" width="414" height="470"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tSG-9X-nZY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photosCell" id="tSG-9X-nZY" customClass="PicturesCVC" customModule="PersistenceCoreDataLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="470"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vM5-eV-aYf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="470"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR9-d3-eoA">
+                                                    <rect key="frame" x="8" y="8" width="398" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-ZU-Alf">
+                                                    <rect key="frame" x="8" y="58" width="398" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rh-Zh-k8a">
+                                                    <rect key="frame" x="8" y="99.5" width="398" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-c2-PCf">
+                                                    <rect key="frame" x="8" y="141" width="398" height="321"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sic-c2-PCf" firstAttribute="top" secondItem="3Rh-Zh-k8a" secondAttribute="bottom" constant="8" id="30G-dv-cUy"/>
+                                                <constraint firstItem="hR9-d3-eoA" firstAttribute="top" secondItem="vM5-eV-aYf" secondAttribute="top" constant="8" id="Abb-Jo-UkP"/>
+                                                <constraint firstItem="3Rh-Zh-k8a" firstAttribute="leading" secondItem="vM5-eV-aYf" secondAttribute="leading" constant="8" id="BYv-kt-dfP"/>
+                                                <constraint firstItem="b4h-ZU-Alf" firstAttribute="top" secondItem="hR9-d3-eoA" secondAttribute="bottom" constant="8" id="IjD-fu-Vye"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Rh-Zh-k8a" secondAttribute="trailing" constant="8" id="O2K-xr-oW2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sic-c2-PCf" secondAttribute="bottom" constant="8" id="XCr-k4-W3M"/>
+                                                <constraint firstAttribute="trailing" secondItem="hR9-d3-eoA" secondAttribute="trailing" constant="8" id="XgG-ES-VeD"/>
+                                                <constraint firstItem="b4h-ZU-Alf" firstAttribute="leading" secondItem="vM5-eV-aYf" secondAttribute="leading" constant="8" id="eWh-rz-Aea"/>
+                                                <constraint firstItem="Sic-c2-PCf" firstAttribute="centerX" secondItem="vM5-eV-aYf" secondAttribute="centerX" id="fI3-U8-LeW"/>
+                                                <constraint firstItem="hR9-d3-eoA" firstAttribute="leading" secondItem="vM5-eV-aYf" secondAttribute="leading" constant="8" id="gtd-Gv-RLE"/>
+                                                <constraint firstAttribute="trailing" secondItem="b4h-ZU-Alf" secondAttribute="trailing" constant="8" id="qlM-lg-4RC"/>
+                                                <constraint firstItem="3Rh-Zh-k8a" firstAttribute="top" secondItem="b4h-ZU-Alf" secondAttribute="bottom" constant="8" id="v21-7B-57g"/>
+                                                <constraint firstItem="Sic-c2-PCf" firstAttribute="leading" secondItem="3Rh-Zh-k8a" secondAttribute="leading" id="zb5-l9-tFk"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="294"/>
+                                        <size key="customSize" width="414" height="470"/>
+                                        <connections>
+                                            <outlet property="downloadsLabel" destination="3Rh-Zh-k8a" id="itT-Os-Ykt"/>
+                                            <outlet property="pictureView" destination="Sic-c2-PCf" id="ThM-TC-mS6"/>
+                                            <outlet property="userLabel" destination="hR9-d3-eoA" id="CWC-bC-2yp"/>
+                                            <outlet property="viewLabel" destination="b4h-ZU-Alf" id="Oi5-jA-cJv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -172,6 +216,10 @@
                         <viewLayoutGuide key="safeArea" id="WJb-3W-ZyO"/>
                     </view>
                     <navigationItem key="navigationItem" id="X5Q-QE-RZ6"/>
+                    <connections>
+                        <outlet property="collectionView" destination="KGu-J1-BdL" id="rFY-PL-u4Z"/>
+                        <outlet property="photoSearch" destination="8st-sZ-oJh" id="E0h-Rk-GIy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgx-SI-SiI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
